@@ -29,7 +29,7 @@ Node, npm and bower are necessary to install the component and dependencies. web
 First, install the component via bower on the command line.
 
 ```
-bower install https://github.com/PredixDev/px-data-table.git --save
+bower install https://github.com/indaco/px-data-table.git --save
 ```
 
 Second, import the component to your application with the following tag in your head.
