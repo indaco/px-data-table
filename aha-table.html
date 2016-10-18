@@ -1028,7 +1028,13 @@
       }
       else {
         row._selected = true;
+        row.indexInDisplayedRows = indexInDisplayedRows;
         this.notifyPath('displayedRows.' + indexInDisplayedRows + '._selected', row._selected);
+        this.selectedRows.forEach(function(row, index) {
+            row._selected = false;
+            _this.notifyPath('displayedRows.' + row.indexInDisplayedRows + '._selected', row._selected);
+            _this.splice('selectedRows', _this.selectedRows.indexOf(row), 1);
+        });
         this.push('selectedRows', row);
       }
       this.set('meta.0.label', "Selected (" + this.selectedRows.length+ ")");
